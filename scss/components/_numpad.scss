@@ -1,0 +1,34 @@
+@use '../abstract/' as *;
+
+.numpad{
+  width: 100%;
+  background: $screenbackground;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1.5rem;
+  padding: 2rem 1.875rem;
+  flex-basis: 6.25rem;
+  button {
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.65125rem 1rem;  
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  button.del{
+    font-size: 1rem;
+  }
+  .small-btn{
+    flex-basis: 4.25rem;
+  }
+  .large-btn{
+    flex-basis: 14.1875rem;
+  }
+  .large-btn.reset{
+    grid-area: 5 / 1 / 6 / 3;
+  }
+  .large-btn.equal{
+    grid-area: 5 / 3 / 6 / 5;
+  }
+}

@@ -1,0 +1,15 @@
+@use '../abstract/' as *;
+.display .result{
+  border: none;
+  height: 9.375rem;
+  width: 100%;
+  background: $screenbackground;
+  margin-block: 2.25rem 1.625rem;
+  padding: 0 1.875rem;
+  border-radius: 0.875rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
