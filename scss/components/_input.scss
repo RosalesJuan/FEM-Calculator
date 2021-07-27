@@ -1,4 +1,5 @@
 @use '../abstract/' as *;
+@use'./color-font' as *;
 .display .result{
   border: none;
   height: 9.375rem;

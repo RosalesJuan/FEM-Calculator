@@ -1,5 +1,5 @@
 @use '../abstract/' as *;
-
+@use'./color-font' as *;
 .title{
   display: flex;
   align-items: center;

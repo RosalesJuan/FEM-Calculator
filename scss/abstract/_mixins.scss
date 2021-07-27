@@ -1,0 +1,15 @@
+@use'../components/color-font' as *;
+
+@mixin themeone-btn {
+  background: $keybackground;
+  color: $textwhite;
+  font-size: 1.125rem;
+  border-bottom: 4px solid $keyshadow;
+}
+
+@mixin red-btn{
+  background: $redkeybackground;
+  color: $textwhite;
+  font-weight: bold;
+  border-bottom: 4px solid $darkredkeyshadow;
+}

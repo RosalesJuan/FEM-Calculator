@@ -73,19 +73,40 @@
 }
 .numpad button {
   border-radius: 0.5rem;
-  border: none;
-  padding: 0.65125rem 1rem;
+  border: hidden;
+  padding: 0.8rem 1rem;
   font-size: 2rem;
+  font-weight: bold;
+  color: #404e72;
   cursor: pointer;
 }
 .numpad button.del {
   font-size: 1rem;
 }
 .numpad .small-btn {
-  flex-basis: 4.25rem;
+  flex-basis: 4.2rem;
+  background: #eae3dc;
+}
+.numpad .small-btn.del {
+  background: #637097;
+  color: white;
+  font-size: 1.125rem;
+  border-bottom: 4px solid #404e72;
 }
 .numpad .large-btn {
   flex-basis: 14.1875rem;
+}
+.numpad .large-btn.reset {
+  background: #637097;
+  color: white;
+  font-size: 1.125rem;
+  border-bottom: 4px solid #404e72;
+}
+.numpad .large-btn.equal {
+  background: #d03f2f;
+  color: white;
+  font-weight: bold;
+  border-bottom: 4px solid #93261a;
 }
 .numpad .large-btn.reset {
   grid-area: 5/1/6/3;

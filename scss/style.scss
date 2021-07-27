@@ -1,19 +1,6 @@
 @forward './components/top';
 @forward './components/input';
 @forward './components/numpad';
+@forward './components/color-font';
+@forward './components/globals';
 @use '../scss/abstract/' as *;
-
-
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: $font-family;
-  font-size: 16px;
-  background-color: $mainbackground;
-  color: $textwhite;  
-}
-
-section{
-  padding: 5.9375rem 28.125rem;
-}

@@ -1,5 +1,5 @@
 @use '../abstract/' as *;
-
+@use'./color-font' as *;
 .numpad{
   width: 100%;
   background: $screenbackground;
@@ -11,19 +11,31 @@
   flex-basis: 6.25rem;
   button {
     border-radius: 0.5rem;
-    border: none;
-    padding: 0.65125rem 1rem;  
+    border: hidden;
+    padding: 0.8rem 1rem;  
     font-size: 2rem;
+    font-weight: bold;
+    color: $keyshadow;
     cursor: pointer;
   }
   button.del{
     font-size: 1rem;
   }
   .small-btn{
-    flex-basis: 4.25rem;
+    flex-basis: 4.20rem;
+    background: $lighorangekeybackground;
+    &.del{
+      @include themeone-btn;
+    }
   }
   .large-btn{
     flex-basis: 14.1875rem;
+    &.reset{
+      @include themeone-btn;
+    }
+    &.equal{
+      @include red-btn;
+    }
   }
   .large-btn.reset{
     grid-area: 5 / 1 / 6 / 3;
