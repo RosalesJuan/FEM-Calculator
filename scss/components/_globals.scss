@@ -1,4 +1,5 @@
 @use'./color-font' as *;
+@use '../abstract/' as *;
 
 *{
   box-sizing: border-box;
@@ -6,8 +7,17 @@
   padding: 0;
   font-family: $font-family;
   font-size: 16px;
-  background-color: $mainbackground;
-  color: $textwhite;  
+}
+
+body.theme-switcher{
+  background: $mainbackground;
+  color: $textwhite;
+  @include smooth-transition;
+}
+
+body.theme-switcher.active{
+  background: $secondbackground;
+  color: $verydarkgrayishyellow;
 }
 
 section{

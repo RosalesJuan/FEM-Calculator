@@ -7,9 +7,33 @@
   border-bottom: 4px solid $keyshadow;
 }
 
+
 @mixin red-btn{
   background: $redkeybackground;
   color: $textwhite;
   font-weight: bold;
   border-bottom: 4px solid $darkredkeyshadow;
+}
+
+@mixin smooth-transition {
+  transition: all 0.35s ease-in-out;  
+}
+
+@mixin switchBtn{
+  padding: 0.35rem 0.25rem;
+  width: 4.5rem;
+  height: 1.75rem;
+  border: none;
+  background: $togglebackground;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+@mixin switchBall {
+  transition: all 0.35s ease-in-out;
+  display: inline-block;
+  height: 1.125rem;
+  width: 1.125rem;
+  border-radius: 100%;
 }

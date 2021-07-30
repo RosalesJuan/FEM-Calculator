@@ -9,14 +9,16 @@
   grid-gap: 1.5rem;
   padding: 2rem 1.875rem;
   flex-basis: 6.25rem;
+  @include smooth-transition;
   button {
     border-radius: 0.5rem;
     border: hidden;
     padding: 0.8rem 1rem;  
     font-size: 2rem;
     font-weight: bold;
-    color: $keyshadow;
+    color: $textverydarkgrayishblue;
     cursor: pointer;
+    margin: 5px 5px;
   }
   button.del{
     font-size: 1rem;
@@ -24,6 +26,8 @@
   .small-btn{
     flex-basis: 4.20rem;
     background: $lighorangekeybackground;
+    border-bottom: 4px solid $grayishorangekeyshadow;
+    
     &.del{
       @include themeone-btn;
     }
@@ -32,15 +36,36 @@
     flex-basis: 14.1875rem;
     &.reset{
       @include themeone-btn;
+      grid-area: 5 / 1 / 6 / 3;
     }
     &.equal{
       @include red-btn;
+      grid-area: 5 / 3 / 6 / 5;
     }
   }
-  .large-btn.reset{
-    grid-area: 5 / 1 / 6 / 3;
+}
+
+.numpad [data-operation].active{
+  background: $grayishorangekeyshadow;
+}
+
+.numpad.active{
+  background: $secondtogglebackground;
+  button{
+    color: $verydarkgrayishyellow;
   }
-  .large-btn.equal{
-    grid-area: 5 / 3 / 6 / 5;
+  .small-btn.del{
+    background: $secondkeybackground;
+    border-bottom: 4px solid $secondkeyshadow;
+  }
+  .large-btn{
+    &.reset{
+      background: $secondkeybackground;
+      border-bottom: 4px solid $secondkeyshadow;
+    }
+    &.equal{
+      background: $orangekeybackground;
+      border-bottom: 4px solid $darkorangekeyshadow;
+    }
   }
 }
