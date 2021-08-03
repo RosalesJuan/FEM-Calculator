@@ -16,7 +16,7 @@
 }
 
 @mixin smooth-transition {
-  transition: all 0.35s ease-in-out;  
+  transition: all 0s ease-in-out;  
 }
 
 @mixin switchBtn{

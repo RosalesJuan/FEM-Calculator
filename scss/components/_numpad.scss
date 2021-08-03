@@ -24,7 +24,8 @@
     font-size: 1rem;
   }
   .small-btn{
-    flex-basis: 4.20rem;
+    @include smooth-transition;
+    //flex-basis: 4.20rem;
     background: $lighorangekeybackground;
     border-bottom: 4px solid $grayishorangekeyshadow;
     
@@ -33,6 +34,7 @@
     }
   }
   .large-btn{
+    @include smooth-transition;
     flex-basis: 14.1875rem;
     &.reset{
       @include themeone-btn;
@@ -45,9 +47,11 @@
   }
 }
 
-.numpad [data-operation].active{
-  background: $grayishorangekeyshadow;
+.numpad button:active{
+  //border: 4px solid $keyshadow;
+  transform: scale(0.95);
 }
+
 
 .numpad.active{
   background: $secondtogglebackground;
@@ -67,5 +71,27 @@
       background: $orangekeybackground;
       border-bottom: 4px solid $darkorangekeyshadow;
     }
+  }
+}
+
+.numpad.active-two{
+  background: $thirdtogglebackground;
+  button{
+    color: $verydarkblue;
+  }
+  .small-btn{
+    background: $thirdkeybackground;
+    border-bottom: 4px solid $thirdkeyshadow;
+  }
+  .small-btn.del,
+  .large-btn.reset{
+    color: $lightyellow;
+    background: $purecyankeybackground;
+    border-bottom: 4px solid $softcyankeyshadow;
+  }
+  .large-btn.equal{
+    color: $lightyellow;
+    background: $verydarkvioletkeybackground;
+    border-bottom: 4px solid $darkmagentakeyshadow;
   }
 }

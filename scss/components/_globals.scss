@@ -15,11 +15,16 @@ body.theme-switcher{
   @include smooth-transition;
 }
 
+section{
+  padding: 5.9375rem 28.125rem;
+}
+
 body.theme-switcher.active{
   background: $secondbackground;
   color: $verydarkgrayishyellow;
 }
 
-section{
-  padding: 5.9375rem 28.125rem;
+body.theme-switcher.active-two{
+  background: $thirdbackground;
+  color: $lightyellow;
 }

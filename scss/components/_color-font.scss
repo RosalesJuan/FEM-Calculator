@@ -39,16 +39,17 @@ $verydarkgrayishyellow: hsl(60, 10%, 19%);
 
 //------------------------THEME THREE----------------------------------------------------------------
 //backgrounds
-$thirdbackground: hsl(277, 82%, 22%);
-$thirdtogglebackground: hsl(277, 71%, 12%);
+$thirdbackground: hsl(280, 82%, 25%);
+$thirdtogglebackground: hsl(295, 86%, 12%);
+$thirdscreenbackground: hsl(294, 86%, 12%);
 
 //keys
-$thirdkeybackground: hsl(294, 89%, 26%);
-$thirdkeyshadow: hsl(292, 91%, 52%);
-$purecyankeybackground: hsl(246, 100%, 44%);
-$softcyankeyshadow: hsl(243, 92%, 66%);
-$verydarkvioletkeybackground: hsl(268, 47%, 21%);
-$darkmagentakeyshadow: hsl(290, 70%, 36%);
+$thirdkeybackground: 	hsl(147, 50%, 45%);
+$thirdkeyshadow: hsl(145, 75%, 20%);
+$purecyankeybackground: hsl(229, 88%, 52%);
+$softcyankeyshadow: hsla(226, 98%, 18%, 0.884);
+$verydarkvioletkeybackground:hsl(295, 90%, 35%);
+$darkmagentakeyshadow: hsl(295, 95%, 20%);
 
 //text
 $lightyellow: hsl(39, 68%, 62%);

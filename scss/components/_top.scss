@@ -42,7 +42,9 @@
   }
 }
 .switch-btn.active-two{
-  span{
+  background: $thirdtogglebackground;
+  #switch-circle{
     transform: translateX(2.8rem);
+    background: $purecyankeybackground;
   }
 }

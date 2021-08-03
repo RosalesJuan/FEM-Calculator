@@ -14,7 +14,7 @@
   margin-left: 2rem;
 }
 .title .theme-switch .switch-nums {
-  transition: all 0.35s ease-in-out;
+  transition: all 0s ease-in-out;
 }
 .title .theme-switch .switch-nums div {
   display: flex;
@@ -51,8 +51,12 @@
   background: #ca5502;
 }
 
-.switch-btn.active-two span {
+.switch-btn.active-two {
+  background: #350439;
+}
+.switch-btn.active-two #switch-circle {
   transform: translateX(2.8rem);
+  background: #1940f0;
 }
 
 .display .result {
@@ -68,11 +72,15 @@
   align-items: center;
   font-size: 3rem;
   font-weight: bold;
-  transition: all 0.35s ease-in-out;
+  transition: all 0s ease-in-out;
 }
 
 .display .result.active {
   background: #ededed;
+}
+
+.display .result.active-two {
+  background: #340439;
 }
 
 .numpad {
@@ -84,7 +92,7 @@
   grid-gap: 1.5rem;
   padding: 2rem 1.875rem;
   flex-basis: 6.25rem;
-  transition: all 0.35s ease-in-out;
+  transition: all 0s ease-in-out;
 }
 .numpad button {
   border-radius: 0.5rem;
@@ -100,7 +108,7 @@
   font-size: 1rem;
 }
 .numpad .small-btn {
-  flex-basis: 4.2rem;
+  transition: all 0s ease-in-out;
   background: #eae3dc;
   border-bottom: 4px solid #b4a597;
 }
@@ -111,6 +119,7 @@
   border-bottom: 4px solid #404e72;
 }
 .numpad .large-btn {
+  transition: all 0s ease-in-out;
   flex-basis: 14.1875rem;
 }
 .numpad .large-btn.reset {
@@ -128,8 +137,8 @@
   grid-area: 5/3/6/5;
 }
 
-.numpad [data-operation].active {
-  background: #b4a597;
+.numpad button:active {
+  transform: scale(0.95);
 }
 
 .numpad.active {
@@ -151,6 +160,28 @@
   border-bottom: 4px solid #893901;
 }
 
+.numpad.active-two {
+  background: #350439;
+}
+.numpad.active-two button {
+  color: #1b2428;
+}
+.numpad.active-two .small-btn {
+  background: #39ac6d;
+  border-bottom: 4px solid #0d592d;
+}
+.numpad.active-two .small-btn.del,
+.numpad.active-two .large-btn.reset {
+  color: #e0b25c;
+  background: #1940f0;
+  border-bottom: 4px solid rgba(1, 22, 91, 0.884);
+}
+.numpad.active-two .large-btn.equal {
+  color: #e0b25c;
+  background: #9c09aa;
+  border-bottom: 4px solid #5b0363;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -162,7 +193,11 @@
 body.theme-switcher {
   background: #3a4764;
   color: white;
-  transition: all 0.35s ease-in-out;
+  transition: all 0s ease-in-out;
+}
+
+section {
+  padding: 5.9375rem 28.125rem;
 }
 
 body.theme-switcher.active {
@@ -170,8 +205,9 @@ body.theme-switcher.active {
   color: #35352c;
 }
 
-section {
-  padding: 5.9375rem 28.125rem;
+body.theme-switcher.active-two {
+  background: #510b74;
+  color: #e0b25c;
 }
 
 /*# sourceMappingURL=style.css.map */

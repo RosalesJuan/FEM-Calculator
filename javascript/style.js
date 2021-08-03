@@ -10,6 +10,10 @@ const numpadOne = document.querySelector('.numpad')
 switchButton.addEventListener('click', () =>{
   if (switchButton.classList.contains('active-two')){
     switchButton.classList.remove('active-two')
+    switchButton.classList.remove('active-two')
+    bodyThemeOne.classList.remove('active-two')
+    inputThemeOne.classList.remove('active-two')
+    numpadOne.classList.remove('active-two')
   }else if(!switchButton.classList.contains('active')){
     switchButton.classList.add('active')
     bodyThemeOne.classList.add('active')
@@ -19,8 +23,12 @@ switchButton.addEventListener('click', () =>{
     switchButton.classList.remove('active')
     bodyThemeOne.classList.remove('active')
     inputThemeOne.classList.remove('active')
-    switchButton.classList.add('active-two')
     numpadOne.classList.remove('active')
+    switchButton.classList.add('active-two')
+    switchButton.classList.add('active-two')
+    bodyThemeOne.classList.add('active-two')
+    inputThemeOne.classList.add('active-two')
+    numpadOne.classList.add('active-two')
   }
 });
 
@@ -29,13 +37,13 @@ switchButton.addEventListener('click', () =>{
 
 
 //----------------calculator class-------------------
-//idea taken from https://github.com/WebDevSimplified/Vanilla-JavaScript-Calculator
+//taken from https://github.com/WebDevSimplified/Vanilla-JavaScript-Calculator
 
 class calculator{
-  constructor(currentNum, operationElement){
+  constructor(currentNum){
     this.currentNum = currentNum
     this.previousNum = ''
-    this.operation = operationElement
+    this.operation = undefined
     this.resetNumbers()
   }
   resetNumbers(){
@@ -53,7 +61,7 @@ class calculator{
   }
   compute() {
     //this.operation = ''
-    let total = 0
+    let total = ''
     let prev = +this.previousDisplay
     let curr = +this.currentDisplay
     switch(this.operation){
@@ -73,20 +81,18 @@ class calculator{
         return
     }
     this.currentDisplay = total
+    this.operation = undefined
+    this.previousDisplay  = ''
   }
 
   setOpeartion (operation){
-    if(this.operation === undefined){
-      this.operation = operation    
-      this.previousDisplay = this.currentDisplay
-      //this.currentDisplay = ''
-    } else {
-      //this.operation = undefined
+    if(this.currentDisplay === '') return
+    if(this.previousDisplay !== ''){
+      this.compute()
+    }
       this.operation = operation
       this.previousDisplay = this.currentDisplay
-      //this.currentDisplay = ''
-    }
-    this.currentDisplay = ''
+      this.currentDisplay = ''
   }
 
   activeOpeation (){
@@ -96,9 +102,31 @@ class calculator{
       this.operation.classList.add('active')
     }
   }
+  getDisplayNumber(number){
+    const stringNumber = number.toString()
+    const integerDigits = parseFloat(stringNumber.split('.')[0])
+    const decimalDigits = stringNumber.split('.')[1]
+    let numberDisplay = ''
+    if(isNaN(integerDigits)){
+      numberDisplay = ''
+    } else {
+      numberDisplay = integerDigits.toLocaleString('en-US', {maximumFractionDigits: 4})
+    }
+    if (decimalDigits !== undefined){
+      return `${numberDisplay}.${decimalDigits}`
+    } else {
+      return numberDisplay
+    }
+
+  }
 
   updateDisplay (){
-    this.currentNum.innerHTML = this.currentDisplay
+    this.currentNum.innerHTML = this.getDisplayNumber(this.currentDisplay)
+    if(this.operation != null){
+      this.previousDisplay = this.currentNum
+    } else {
+      this.previousDisplay = ''
+    }
   }
 }
 
@@ -111,7 +139,7 @@ const resetButton = document.querySelector('[data-reset]')
 const currentNum = document.querySelector('.result')
 const previousNum = document.querySelector('.prev-result')
 
-const myCalculator = new calculator(currentNum, operationButton)
+const myCalculator = new calculator(currentNum)
 
 numberButton.forEach(button =>{
   button.addEventListener('click', () =>{
@@ -124,7 +152,7 @@ numberButton.forEach(button =>{
 operationButton.forEach(button =>{
   button.addEventListener('click', () =>{
     myCalculator.setOpeartion(button.innerHTML)
-    myCalculator.activeOpeation()
+    //myCalculator.activeOpeation()
     myCalculator.updateDisplay()
   })
 })
@@ -141,7 +169,6 @@ deleteButton.addEventListener('click', button =>{
 
 equalButton.addEventListener('click', button =>{
   myCalculator.compute()
-
   myCalculator.updateDisplay()
 })
 //equalButton.addEventListener('click', )
