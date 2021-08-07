@@ -48,3 +48,12 @@
     background: $purecyankeybackground;
   }
 }
+
+
+//----breakpoints----------
+
+.title{
+  @include breakpoint-down(smallphone){
+    
+  }
+}

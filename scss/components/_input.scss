@@ -23,3 +23,12 @@
 .display .result.active-two{
   background: $thirdscreenbackground;
 }
+
+//Media queries
+
+
+.display .result{
+  @include breakpoint-down(smallphone){
+    height: 5.625rem;
+  }
+}

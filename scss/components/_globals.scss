@@ -28,3 +28,21 @@ body.theme-switcher.active-two{
   background: $thirdbackground;
   color: $lightyellow;
 }
+
+
+section{
+  @include breakpoint-down(tablet){
+    padding: 5.9375rem 12rem; 
+  }
+}
+section{
+  @include breakpoint-down(phone){
+    padding: 5.9375rem 4rem
+  }
+}
+
+section{
+  @include breakpoint-down(smallphone){
+    padding: 5.9375rem 1.5rem
+  }
+}

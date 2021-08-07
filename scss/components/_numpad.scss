@@ -9,6 +9,7 @@
   grid-gap: 1.5rem;
   padding: 2rem 1.875rem;
   flex-basis: 6.25rem;
+  border-radius: 0.875rem;
   @include smooth-transition;
   button {
     border-radius: 0.5rem;
@@ -18,10 +19,11 @@
     font-weight: bold;
     color: $textverydarkgrayishblue;
     cursor: pointer;
-    margin: 5px 5px;
+    //margin: 5px 5px;
   }
-  button.del{
-    font-size: 1rem;
+  button.del,
+  button.large-btn{
+    font-size: 1.25rem;
   }
   .small-btn{
     @include smooth-transition;
@@ -47,11 +49,27 @@
   }
 }
 
-.numpad button:active{
+
+.numpad button.small-btn:active,
+.numpad button.small-btn.del:active,
+.numpad button.large-btn.reset:active,
+.numpad button.large-btn.equal:active{
   //border: 4px solid $keyshadow;
-  transform: scale(0.95);
+  //transform: scale(0.90);
+  //transform: scale(0.95);
+  border-bottom: hidden;
+  // border-top: 4px solid $grayishorangekeyshadow;
+  // border-right: 4px solid $grayishorangekeyshadow;
+  // border-left: 4px solid $grayishorangekeyshadow;
 }
 
+button.pressed{
+  border-bottom: none;
+  border-top: 4px solid $grayishorangekeyshadow;
+  border-right: 4px solid $grayishorangekeyshadow;
+  border-left: 4px solid $grayishorangekeyshadow;
+  //opacity: 0.85;
+}
 
 .numpad.active{
   background: $secondtogglebackground;
@@ -93,5 +111,17 @@
     color: $lightyellow;
     background: $verydarkvioletkeybackground;
     border-bottom: 4px solid $darkmagentakeyshadow;
+  }
+}
+
+//Media Queries 
+
+.numpad{
+  @include breakpoint-down(smallphone){
+    grid-gap: 0.875rem;
+    padding: 1.375rem;
+    button{
+      font-size: 1.625rem;
+    }
   }
 }

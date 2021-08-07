@@ -3,7 +3,6 @@
 @mixin themeone-btn {
   background: $keybackground;
   color: $textwhite;
-  font-size: 1.125rem;
   border-bottom: 4px solid $keyshadow;
 }
 
@@ -11,12 +10,11 @@
 @mixin red-btn{
   background: $redkeybackground;
   color: $textwhite;
-  font-weight: bold;
   border-bottom: 4px solid $darkredkeyshadow;
 }
 
 @mixin smooth-transition {
-  transition: all 0s ease-in-out;  
+  transition: all 0.3s ease-in-out;  
 }
 
 @mixin switchBtn{
@@ -36,4 +34,24 @@
   height: 1.125rem;
   width: 1.125rem;
   border-radius: 100%;
+}
+
+
+$breakpoints-up: ("phone": "40em", "tablet":"64em", "desktop": "87.5em");
+$breakpoints-down: ("smallphone": "23.5em", "phone": "39.9375em", "tablet":"63.9375em", "desktop": "87.4375em");
+
+@media (min-width: 64em){
+
+}
+
+@mixin breakpoint-up($size){
+  @media (min-width: map-get($breakpoints-up, $size)){
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media(max-width: map-get($breakpoints-down, $size)){
+    @content;
+  }
 }
