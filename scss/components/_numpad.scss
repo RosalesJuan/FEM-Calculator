@@ -26,8 +26,6 @@
     font-size: 1.25rem;
   }
   .small-btn{
-    @include smooth-transition;
-    //flex-basis: 4.20rem;
     background: $lighorangekeybackground;
     border-bottom: 4px solid $grayishorangekeyshadow;
     
@@ -104,13 +102,13 @@ button.pressed{
   .small-btn.del,
   .large-btn.reset{
     color: $lightyellow;
-    background: $purecyankeybackground;
-    border-bottom: 4px solid $softcyankeyshadow;
+    background: $verydarkvioletkeybackground;
+    border-bottom: 4px solid $darkmagentakeyshadow;
   }
   .large-btn.equal{
     color: $lightyellow;
-    background: $verydarkvioletkeybackground;
-    border-bottom: 4px solid $darkmagentakeyshadow;
+    background: $purecyankeybackground;
+    border-bottom: 4px solid $softcyankeyshadow;
   }
 }
 

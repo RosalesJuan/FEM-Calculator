@@ -14,7 +14,7 @@
   margin-left: 2rem;
 }
 .title .theme-switch .switch-nums {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 .title .theme-switch .switch-nums div {
   display: flex;
@@ -72,7 +72,7 @@
   align-items: center;
   font-size: 3rem;
   font-weight: bold;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 
 .display .result.active {
@@ -99,7 +99,7 @@
   padding: 2rem 1.875rem;
   flex-basis: 6.25rem;
   border-radius: 0.875rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 .numpad button {
   border-radius: 0.5rem;
@@ -115,7 +115,6 @@
   font-size: 1.25rem;
 }
 .numpad .small-btn {
-  transition: all 0.3s ease-in-out;
   background: #eae3dc;
   border-bottom: 4px solid #b4a597;
 }
@@ -125,7 +124,7 @@
   border-bottom: 4px solid #404e72;
 }
 .numpad .large-btn {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.75s ease-in-out;
   flex-basis: 14.1875rem;
 }
 .numpad .large-btn.reset {
@@ -187,13 +186,13 @@ button.pressed {
 .numpad.active-two .small-btn.del,
 .numpad.active-two .large-btn.reset {
   color: #e0b25c;
-  background: #1940f0;
-  border-bottom: 4px solid rgba(1, 22, 91, 0.884);
+  background: #9c09aa;
+  border-bottom: 4px solid #5b0363;
 }
 .numpad.active-two .large-btn.equal {
   color: #e0b25c;
-  background: #9c09aa;
-  border-bottom: 4px solid #5b0363;
+  background: #1940f0;
+  border-bottom: 4px solid rgba(1, 22, 91, 0.884);
 }
 
 @media (max-width: 23.5em) {
@@ -217,7 +216,7 @@ button.pressed {
 body.theme-switcher {
   background: #3a4764;
   color: white;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 
 section {
